@@ -1,0 +1,38 @@
+{
+  "teamName": "Heroes & Villains",
+  "members": [
+    {
+      "name" : "Tristan Brattinga",
+      "personalPage" : "https://pad/naar/de/app/van/teamlid-1"
+    },
+    {
+      "name" : "Bart Spons",
+      "personalPage" : "https://bart-spons.github.io/web-app-from-scratch-2324/"
+    },
+    {
+      "name" : "Ferhat Kool",
+      "personalPage" : "https://ferhatkool.github.io/web-app-from-scratch-2324/"
+    },
+    {
+      "name" : "Klaudia Dobrzelewska",
+      "personalPage" : "https://sonozakis.github.io/web-app-from-scratch-2324/"
+    },
+    {
+      "name" : "Martijn Kooijman",
+      "personalPage" : "https://martino538.github.io/web-app-from-scratch-2324/"
+    }
+  ],
+
+
+
+
+
+  "pages" : [{
+    "home" : "Welkom",
+    "detail" : "Detail van"
+  }],
+  "otherstuff" : [{
+    "feel" : "free",
+    "to" : "expereriment"
+  }]
+}
