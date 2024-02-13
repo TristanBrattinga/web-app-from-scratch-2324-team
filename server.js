@@ -11,7 +11,7 @@ app.set('view engine', 'ejs')
 const teamMembers = [
   "https://bart-spons.github.io/web-app-from-scratch-2324/json/bart.json",
   "https://raw.githubusercontent.com/ferhatkool/web-app-from-scratch-2324/master/docs/json/data.json",
-  "https://tristanbrattinga.github.io/wafs/data/data.json",
+  "https://tristanbrattinga.github.io/wafs/data.json",
   "https://martino538.github.io/web-app-from-scratch-2324/assets/dataset/dataset-Martijn.json",
   "https://sonozakis.github.io/web-app-from-scratch-2324/scripts/info.json"
 ]
@@ -29,7 +29,6 @@ const fetchTeamData = () => {
       })
       .then((data) => {
         memberData.push(data)
-        console.log(memberData)
         return memberData
       })
       .catch((e) => console.error('Unable to fetch team data:', e))
