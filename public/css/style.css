@@ -91,13 +91,8 @@ header nav {
 /* CARDS STYLING */
 /*****************/
 
-.cardSection {
-    display: none;
-}
 
-.cardSection.show {
-    position: absolute;
-    z-index: 10;
+.dialog[open] {
     color: white;
     /* From https://css.glass */
     background: rgba(191, 120, 77, 0.06);
@@ -106,43 +101,56 @@ header nav {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(191, 120, 77, 0.27);
+    /* From https://css.glass */
     padding: 40px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     max-width: 600px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 }
 
-.cardSection.show article {
-    position: relative;
+.dialog form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-.cardSection.show section:first-of-type {
+.dialog h2 {
+    text-align: center;
+}
+
+.dialog form img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+
+.dialog h4 {
+    margin-bottom: 10px;
+}
+
+.dialog form > ul:last-of-type {
     display: flex;
     justify-content: space-between;
 }
 
-.cardSection img {
-    border-radius: 50px;
-}
-
-.cardSection ul li {
-    white-space: nowrap;
-    padding: 4px 0;
-}
-
-.cardSection h2 {
-    text-align: center;
-    margin-bottom: 10px;
+.dialog form section {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
 }
 
 .closeCardButton {
     appearance: none;
     background-color: transparent;
-    position: relative;
+    position: absolute;
+    top: -1px;
+    right: -1px;
     width: 40px;
     height: 40px;
     display: flex;
@@ -150,8 +158,9 @@ header nav {
     justify-content: center;
     border: 1px solid transparent;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 0 0 0 20px;
     transition: all 0.2s ease;
+    padding: 20px;
 }
 
 .closeCardButton:hover {
@@ -244,11 +253,9 @@ header nav {
     width: 100px;
     height: 100px;
     margin: -51px;
-    background: blue;
     border-radius: 50%;
-    border: 2px solid black;
+    border: 1px solid black;
     overflow: hidden;
-    line-height: 100px;
     transform: rotate(calc(360deg / 5 * var(--count, 0))) translate(200px) rotate(calc(360deg / 5 * var(--count, 0) * -1));
 
     &:nth-of-type(1) {
@@ -272,8 +279,12 @@ header nav {
     }
 }
 
-.circle img {
+.circle > button {
     display: block;
+    appearance: none;
+    border: none;
+    width: 100%;
+    height: 100%;
     animation: rotate 30s linear reverse infinite;
 }
 

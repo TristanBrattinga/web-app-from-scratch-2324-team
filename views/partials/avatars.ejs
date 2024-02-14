@@ -4,27 +4,51 @@
             <li class="circle">
                 <dialog class="dialog">
                     <form method="dialog">
-<!--                        <section class="cardSection container">-->
-                            <h2>Hero passport</h2>
-                            <img src="/images/person.png" alt="" />
-                            <h3><%= member.name %></h3>
+                        <h2>Hero passport</h2>
+                        <section>
+                            <img src="<%= member.avatar.url %>" alt="" />
                             <ul>
-                                <li><%= member.age %></li>
-                                <li><%= member.job %></li>
-                                <li><%= member.city %></li>
-                                <li><%= member.study %></li>
+                                <li><h3>Name: <span><%= member.name %></span></h3></li>
+                                <li>Age: <span><%= member.age %></span></li>
+                                <li>Job: <span><%= member.job %></span></li>
+                                <li>City: <span><%= member.city %></span></li>
+                                <li>Study: <span><%= member.study %></span></li>
                             </ul>
-                            <p><%= member.bio %></p>
-                            <ul>
-                                <% member.favouriteMovies.map((movie) => { %>
-                                    <li><%= movie %></li>
-                                <% }) %>
-                            </ul>
-                            <button class="closeCardButton">
-                                <span></span>
-                                <span></span>
-                            </button>
-<!--                        </section>-->
+                        </section>
+                        <p><%= member.bio %></p>
+                        <ul>
+                            <li>
+
+                                <h4>Favourite Movies:</h4>
+                                <ul>
+                                    <% member.favouriteMovies.map((movie) => { %>
+                                        <li><%= movie %></li>
+                                    <% }) %>
+                                </ul>
+                            </li>
+                            <li>
+
+                                <h4>Top 5 Heroes:</h4>
+                                <ul>
+                                    <% member.superheroes.map((hero) => { %>
+                                        <li><%= hero %></li>
+                                    <% }) %>
+                                </ul>
+                            </li>
+                            <li>
+
+                                <h4>Top 5 Villains:</h4>
+                                <ul>
+                                    <% member.supervillains.map((hero) => { %>
+                                        <li><%= hero %></li>
+                                    <% }) %>
+                                </ul>
+                            </li>
+                        </ul>
+                        <button class="closeCardButton">
+                            <span></span>
+                            <span></span>
+                        </button>
                     </form>
                 </dialog>
                 <button class="avatarButton">

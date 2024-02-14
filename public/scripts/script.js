@@ -12,7 +12,7 @@ const goCrazy = () => {
 goCrazyButton.addEventListener('click', goCrazy)
 
 const handleAvatarClick = () => {
-  [...avatars].forEach((avatar, buttonIndex) => {
+  [...avatars].forEach((avatar) => {
     avatar.addEventListener('click', () => {
       dialog.showModal()
     })
