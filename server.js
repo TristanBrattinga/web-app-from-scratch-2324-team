@@ -29,7 +29,6 @@ const fetchTeamData = () => {
       })
       .then((data) => {
         memberData.push(data)
-        console.log(memberData)
         return memberData
       })
       .catch((e) => console.error('Unable to fetch team data:', e))
