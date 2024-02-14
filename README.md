@@ -1,4 +1,4 @@
-# Team opdracht informatie
+# README Heroes & Villains
 ## Leden
 - Tristan Brattinga
 - Bart Spons
