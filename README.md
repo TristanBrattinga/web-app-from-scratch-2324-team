@@ -195,7 +195,7 @@ Hier staat link in naar iedereen zijn/haar persoonlijke json met data
       "name" : "Martijn Kooijman",
       "personalPage" : "https://martino538.github.io/web-app-from-scratch-2324/"
     }
-  ],
+  ]
 }
 ```
 
