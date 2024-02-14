@@ -266,5 +266,16 @@ Ferhat (server)
 ## Responsive 
 Martijn
 
-
+## Bronnenlijst
+<ul>
+    <li>https://stackoverflow.com/questions/71839052/html-dialog-tag-modal-scrolling-to-bottom-on-open</li>
+    <li>https://stackoverflow.com/questions/25864259/how-to-close-the-new-html-dialog-tag-by-clicking-on-its-backdrop</li>
+    <li>https://css.glass/</li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
 
