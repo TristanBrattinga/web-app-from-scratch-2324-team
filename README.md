@@ -71,7 +71,7 @@ yarn.lock
 ```
 ## Code
 ### index.ejs is de hoofdpagina
-De pagina index.ejs wordt gebruikt als hoofdpagina. In plaats van een index.html pagina wordt gebruik gemaakt van ejs. Omdat alle data te veel is om in één bestand te zetten wordt er gebruik gemaakt van partials. Dit zijn apparte pagina's die worden ingeladen om één pagina. Voor een aantal onderdelen zijn standaard partials aangemaakt:
+De pagina index.ejs wordt gebruikt als hoofdpagina. In plaats van een index.html pagina wordt gebruik gemaakt van ejs. Omdat alle data te veel is om in één bestand te zetten wordt er gebruik gemaakt van partials. Dit zijn aparte componenten die worden ingeladen om één pagina. Voor een aantal onderdelen zijn standaard partials aangemaakt:
 - head
 - header
 - footer
