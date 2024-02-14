@@ -129,27 +129,25 @@ Wat we gebruiken op onze team website:
             <li class="circle">
                 <dialog class="dialog">
                     <form method="dialog">
-<!--                        <section class="cardSection container">-->
-                            <h2>Hero passport</h2>
-                            <img src="/images/person.png" alt="" />
-                            <h3><%= member.name %></h3>
-                            <ul>
-                                <li><%= member.age %></li>
-                                <li><%= member.job %></li>
-                                <li><%= member.city %></li>
-                                <li><%= member.study %></li>
-                            </ul>
-                            <p><%= member.bio %></p>
-                            <ul>
-                                <% member.favouriteMovies.map((movie) => { %>
-                                    <li><%= movie %></li>
-                                <% }) %>
-                            </ul>
-                            <button class="closeCardButton">
-                                <span></span>
-                                <span></span>
-                            </button>
-<!--                        </section>-->
+                        <h2>Hero passport</h2>
+                        <img src="/images/person.png" alt="" />
+                        <h3><%= member.name %></h3>
+                        <ul>
+                            <li><%= member.age %></li>
+                            <li><%= member.job %></li>
+                            <li><%= member.city %></li>
+                            <li><%= member.study %></li>
+                        </ul>
+                        <p><%= member.bio %></p>
+                        <ul>
+                            <% member.favouriteMovies.map((movie) => { %>
+                                <li><%= movie %></li>
+                            <% }) %>
+                        </ul>
+                        <button class="closeCardButton">
+                            <span></span>
+                            <span></span>
+                        </button>
                     </form>
                 </dialog>
                 <button class="avatarButton">
