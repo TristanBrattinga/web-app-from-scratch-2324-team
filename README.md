@@ -1,4 +1,4 @@
-# Team opdracht informatie
+# README Heroes & Villains
 ## Leden
 - Tristan Brattinga
 - Bart Spons
@@ -23,10 +23,9 @@ Zoals hierboven genoemd is ons algemene thema films. Om deze informatie overzich
 - Klaudia
     - Readme
 - Ferhat
-    - Host
+    - host
 - Martijn
-    - Responsive
-    - Hulp bij de code
+    - responsive
 
 # Process
 ## Schetsen
@@ -72,7 +71,7 @@ yarn.lock
 ```
 ## Code
 ### index.ejs is de hoofdpagina
-De pagina index.ejs wordt gebruikt als hoofdpagina. In plaats van een index.html pagina wordt gebruik gemaakt van ejs. Omdat alle data te veel is om in één bestand te zetten wordt er gebruik gemaakt van partials. Dit zijn apparte pagina's die worden ingeladen om één pagina. Voor een aantal onderdelen zijn standaard partials aangemaakt:
+De pagina index.ejs wordt gebruikt als hoofdpagina. In plaats van een index.html pagina wordt gebruik gemaakt van ejs. Omdat alle data te veel is om in één bestand te zetten wordt er gebruik gemaakt van partials. Dit zijn aparte componenten die worden ingeladen om één pagina. Voor een aantal onderdelen zijn standaard partials aangemaakt:
 - head
 - header
 - footer
@@ -130,27 +129,25 @@ Wat we gebruiken op onze team website:
             <li class="circle">
                 <dialog class="dialog">
                     <form method="dialog">
-<!--                        <section class="cardSection container">-->
-                            <h2>Hero passport</h2>
-                            <img src="/images/person.png" alt="" />
-                            <h3><%= member.name %></h3>
-                            <ul>
-                                <li><%= member.age %></li>
-                                <li><%= member.job %></li>
-                                <li><%= member.city %></li>
-                                <li><%= member.study %></li>
-                            </ul>
-                            <p><%= member.bio %></p>
-                            <ul>
-                                <% member.favouriteMovies.map((movie) => { %>
-                                    <li><%= movie %></li>
-                                <% }) %>
-                            </ul>
-                            <button class="closeCardButton">
-                                <span></span>
-                                <span></span>
-                            </button>
-<!--                        </section>-->
+                        <h2>Hero passport</h2>
+                        <img src="/images/person.png" alt="" />
+                        <h3><%= member.name %></h3>
+                        <ul>
+                            <li><%= member.age %></li>
+                            <li><%= member.job %></li>
+                            <li><%= member.city %></li>
+                            <li><%= member.study %></li>
+                        </ul>
+                        <p><%= member.bio %></p>
+                        <ul>
+                            <% member.favouriteMovies.map((movie) => { %>
+                                <li><%= movie %></li>
+                            <% }) %>
+                        </ul>
+                        <button class="closeCardButton">
+                            <span></span>
+                            <span></span>
+                        </button>
                     </form>
                 </dialog>
                 <button class="avatarButton">
