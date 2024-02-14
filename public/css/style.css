@@ -193,39 +193,6 @@ header nav {
     transform: rotate(-45deg);
 }
 
-/*********************/
-/* SEARCHBAR STYLING */
-/*********************/
-
-#searchBar {
-    appearance: none;
-    padding: 10px;
-    border-radius: 40px;
-    border: none;
-    background-color: #D7D7D7;
-    width: 100%;
-}
-
-.search button {
-    appearance: none;
-    padding: 10px 16px;
-    border-radius: 40px;
-    border: none;
-    background-color: #3C71DA;
-    color: white;
-}
-
-.search form {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-.search label {
-    display: none;
-}
-
 /******************/
 /* PLANET STYLING */
 /******************/
