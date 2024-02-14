@@ -1,43 +1,37 @@
 <section class="planet container">
     <ul class="circle-wrapper">
-        <!--        <% members.forEach(member => { %>-->
-        <!--            <li class="circle">-->
-        <!--                <img src="<%= member.avatar.url %>" alt=""/>-->
-        <!--            </li>-->
-        <!--        <% }) %>-->
-
-        <li class="circle">
-
-
-                <img src="/images/spiderman.png" alt="hero avatar">
-
-        </li>
-        <li class="circle">
-            <button>
-                <img src="/images/spiderman.png" alt="hero avatar">
-            </button>
-        </li>
-        <li class="circle">
-            <button>
-                <img src="/images/spiderman.png" alt="hero avatar">
-            </button>
-        </li>
-        <li class="circle">
-            <button>
-                <img src="/images/spiderman.png" alt="hero avatar">
-            </button>
-        </li>
-        <li class="circle">
-            <button>
-                <img src="/images/spiderman.png" alt="hero avatar">
-            </button>
-        </li>
+        <% members.map((member, index) => { %>
+            <li class="circle">
+                <dialog class="dialog">
+                    <form method="dialog">
+<!--                        <section class="cardSection container">-->
+                            <h2>Hero passport</h2>
+                            <img src="/images/person.png" alt="" />
+                            <h3><%= member.name %></h3>
+                            <ul>
+                                <li><%= member.age %></li>
+                                <li><%= member.job %></li>
+                                <li><%= member.city %></li>
+                                <li><%= member.study %></li>
+                            </ul>
+                            <p><%= member.bio %></p>
+                            <ul>
+                                <% member.favouriteMovies.map((movie) => { %>
+                                    <li><%= movie %></li>
+                                <% }) %>
+                            </ul>
+                            <button class="closeCardButton">
+                                <span></span>
+                                <span></span>
+                            </button>
+<!--                        </section>-->
+                    </form>
+                </dialog>
+                <button class="avatarButton">
+                    <img src="<%= member.avatar.url %>" alt="" />
+                </button>
+            </li>
+        <% }) %>
     </ul>
-    <dialog id="dialogTest">
-        <form method="dialog">
-            <p>this is a test</p>
-            <button id="closeButton">Close me</button>
-        </form>
-    </dialog>
-    <button id="button">Click me</button>
+
 </section>

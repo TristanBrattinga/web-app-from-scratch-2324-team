@@ -92,39 +92,86 @@ header nav {
 /*****************/
 
 .cardSection {
-    margin: 2rem 0;
+    display: none;
 }
 
-.cardSection > ul {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-snap-align: start;
-}
-
-.card {
-    border: 1px solid black;
-    padding: 40px 20px;
+.cardSection.show {
+    position: absolute;
+    z-index: 10;
+    color: white;
+    /* From https://css.glass */
+    background: rgba(191, 120, 77, 0.06);
     border-radius: 30px;
-}
-
-
-.card article section:first-of-type {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(191, 120, 77, 0.27);
+    padding: 40px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 600px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.card article img {
+.cardSection.show article {
+    position: relative;
+}
+
+.cardSection.show section:first-of-type {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardSection img {
     border-radius: 50px;
 }
 
-.card article section:first-of-type ul {
-    text-align: end;
-}
-
-.card article ul li {
+.cardSection ul li {
     white-space: nowrap;
     padding: 4px 0;
+}
+
+.cardSection h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.closeCardButton {
+    appearance: none;
+    background-color: transparent;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.2s ease;
+}
+
+.closeCardButton:hover {
+    border: 1px solid white;
+}
+
+.closeCardButton span {
+    display: block;
+    background-color: white;
+    width: 20px;
+    height: 2px;
+    position: absolute;
+}
+
+.closeCardButton span:first-child {
+    transform: rotate(45deg);
+}
+
+.closeCardButton span:last-child {
+    transform: rotate(-45deg);
 }
 
 /*********************/
@@ -182,7 +229,7 @@ header nav {
     border-radius: 50%;
     position: relative;
     color: white;
-    /*animation: rotate 30s linear infinite;*/
+    animation: rotate 30s linear infinite;
 }
 
 .circle-wrapper.crazy {
@@ -227,7 +274,7 @@ header nav {
 
 .circle img {
     display: block;
-    /*animation: rotate 30s linear reverse infinite;*/
+    animation: rotate 30s linear reverse infinite;
 }
 
 .circle-wrapper.crazy circle img {
