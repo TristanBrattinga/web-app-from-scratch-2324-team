@@ -316,7 +316,14 @@ WantedBy=multi-user.target
 ```
 
 ## Responsive 
-De website moet natuurlijk ook responsive zijn. Dit is opgelost door middel van een mediaquery. De code is hieronder te zien.
+De website moet natuurlijk ook responsive zijn. Dit is opgelost door middel van een mediaquery. Hiernaast is er een extra animatie toegevoegd d.m.v. keyframes. Deze zal zichtbaar zijn zodra de 'circle-wrapper' class de extra class 'crazy' heeft. Kort samengevat zorgt deze animatie ervoor dat de cirkels van buiten naar binnen (en terug) animeren. De code is hieronder te zien:
+
+<strong>Media query voor apparaten voor telefoon:</strong>
+<img width="1167" alt="Scherm­afbeelding 2024-02-14 om 21 14 24" src="https://github.com/TristanBrattinga/web-app-from-scratch-2324-team/assets/32341318/e186d535-72af-4faa-9d6d-93b2cda80531">
+
+<strong>Voor overige apparaten:</strong>
+<img width="1165" alt="Scherm­afbeelding 2024-02-14 om 21 14 39" src="https://github.com/TristanBrattinga/web-app-from-scratch-2324-team/assets/32341318/a0af55cb-9fef-4aa9-b417-0fb5dc6d5162">
+
 
 ## Bronnenlijst
 <ul>
