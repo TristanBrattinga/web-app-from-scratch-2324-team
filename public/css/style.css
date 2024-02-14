@@ -26,6 +26,12 @@ body {
     overflow: hidden;
 }
 
+@media (max-width: 768px) {
+    body {
+        background-position: center;
+    }
+}
+
 li {
     list-style-type: none;
 }
@@ -201,7 +207,7 @@ header nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60vh;
+    height: calc(100vh - 118.5px);
 }
 
 .planet img {
