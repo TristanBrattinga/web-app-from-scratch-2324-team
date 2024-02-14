@@ -10,10 +10,10 @@ app.set('view engine', 'ejs')
 
 const teamMembers = [
   "https://bart-spons.github.io/web-app-from-scratch-2324/json/bart.json",
-  // "https://raw.githubusercontent.com/ferhatkool/web-app-from-scratch-2324/master/docs/json/data.json",
+  "https://ferhatkool.github.io/web-app-from-scratch-2324/json/group.json",
   "https://tristanbrattinga.github.io/wafs/data.json",
-  // "https://martino538.github.io/web-app-from-scratch-2324/assets/dataset/dataset-Martijn.json",
-  // "https://sonozakis.github.io/web-app-from-scratch-2324/scripts/info.json"
+  "https://martino538.github.io/web-app-from-scratch-2324/assets/json/martijn.json",
+  "https://sonozakis.github.io/web-app-from-scratch-2324/info.json"
 ]
 
 let memberData = []

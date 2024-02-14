@@ -3,7 +3,8 @@ const planet          = document.querySelector('.circle-wrapper')
 const closeCardButton = document.querySelector('.closeCardButton')
 const card = document.querySelector('.cardSection')
 const avatars = document.querySelectorAll('.avatarButton')
-const dialog = document.querySelector('.dialog')
+const circles = document.querySelector('.circle')
+const dialog = circles.querySelector('.dialog')
 
 const goCrazy = () => {
   planet.classList.toggle('crazy')
@@ -11,15 +12,16 @@ const goCrazy = () => {
 
 goCrazyButton.addEventListener('click', goCrazy)
 
-const handleAvatarClick = () => {
-  [...avatars].forEach((avatar) => {
-    avatar.addEventListener('click', () => {
-      dialog.showModal()
-    })
-  })
+const handleAvatarClick = (index) => {
+  const dialog = document.querySelectorAll('.dialog')[index];
+  if (dialog) {
+    dialog.showModal()
+  }
 }
 
-handleAvatarClick()
+[...avatars].forEach((avatar, index) => {
+  avatar.addEventListener('click', () => handleAvatarClick(index))
+})
 
 closeCardButton.addEventListener('click', () => {
   card.classList.toggle('show')

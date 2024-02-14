@@ -2,13 +2,13 @@
     <ul class="circle-wrapper">
         <% members.map((member, index) => { %>
             <li class="circle">
-                <dialog class="dialog">
+                <dialog class="dialog" id="dialog-<%= index %>">
                     <form method="dialog">
                         <h2>Hero passport</h2>
                         <section>
                             <img src="<%= member.avatar.url %>" alt="" />
                             <ul>
-                                <li><h3>Name: <span><%= member.name %></span></h3></li>
+                                <li><h3><%= member.name %></h3></li>
                                 <li>Age: <span><%= member.age %></span></li>
                                 <li>Job: <span><%= member.job %></span></li>
                                 <li>City: <span><%= member.city %></span></li>
@@ -51,7 +51,7 @@
                         </button>
                     </form>
                 </dialog>
-                <button class="avatarButton">
+                <button data-dialog-id="dialog-<%= index %>" class="avatarButton">
                     <img src="<%= member.avatar.url %>" alt="" />
                 </button>
             </li>
