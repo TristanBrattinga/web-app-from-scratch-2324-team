@@ -1,4 +1,4 @@
-# Team opdracht
+# Team opdracht informatie
 ## Leden
 - Tristan Brattinga
 - Bart Spons
@@ -23,10 +23,11 @@ Zoals hierboven genoemd is ons algemene thema films. Om deze informatie overzich
 - Klaudia
     - readme
 - Ferhat
-    - host
+    - Domein & hosting
 - Martijn
-    - responsive
+    - responsiveness
 
+# Process
 ## Schetsen
 Hieronder zijn onze schetsen te zien. Het idee is dat er op de pagina 5 buttons staan met allemaal een eigen avatar. Deze buttons draaien allemaal in een rondje. Het idee is dat deze om een planeet heendraaien.
 
@@ -70,7 +71,7 @@ yarn.lock
 ```
 ## Code
 ### index.ejs is de hoofdpagina
-De pagina index.ejs wordt gebruikt als hoofdpagina. In plaats van een index.html pagina wordt gebruik gemaakt van ejs. Omdat alle data te veel is om in één bestand te zetten wordt er gebruik gemaakt van partials. Dit zijn apparte pagina's die worden ingeladen om één pagina. Voor een aantal onderdelen zijn standaard partials aangemaakt:
+De pagina index.ejs wordt gebruikt als hoofdpagina. In plaats van een index.html pagina wordt gebruik gemaakt van ejs. Omdat alle data te veel is om in één bestand te zetten wordt er gebruik gemaakt van partials. Dit zijn aparte componenten die worden ingeladen om één pagina. Voor een aantal onderdelen zijn standaard partials aangemaakt:
 - head
 - header
 - footer
@@ -108,7 +109,18 @@ In de main staan er meer dan één. Hiervoor is meer te lezen in het volgende ko
 
 ### Partials inladen
 #### Avatars.ejs
-In avatars.ejs wordt alle data van onze teamleden ingeladen en weergegeven.
+In avatars.ejs wordt alle data van onze teamleden ingeladen en weergegeven. Natuurlijk hoeven we niet alle data te laten zien maar bepaalde keys.
+
+Wat we gebruiken op onze team website:
+- naam
+- leeftijd
+- werk
+- stad
+- studie
+- favoriete films
+- foto avatar
+- top 5 helden
+- top 5 schruken
 
 ```html
 <section class="planet container">
@@ -117,27 +129,25 @@ In avatars.ejs wordt alle data van onze teamleden ingeladen en weergegeven.
             <li class="circle">
                 <dialog class="dialog">
                     <form method="dialog">
-<!--                        <section class="cardSection container">-->
-                            <h2>Hero passport</h2>
-                            <img src="/images/person.png" alt="" />
-                            <h3><%= member.name %></h3>
-                            <ul>
-                                <li><%= member.age %></li>
-                                <li><%= member.job %></li>
-                                <li><%= member.city %></li>
-                                <li><%= member.study %></li>
-                            </ul>
-                            <p><%= member.bio %></p>
-                            <ul>
-                                <% member.favouriteMovies.map((movie) => { %>
-                                    <li><%= movie %></li>
-                                <% }) %>
-                            </ul>
-                            <button class="closeCardButton">
-                                <span></span>
-                                <span></span>
-                            </button>
-<!--                        </section>-->
+                        <h2>Hero passport</h2>
+                        <img src="/images/person.png" alt="" />
+                        <h3><%= member.name %></h3>
+                        <ul>
+                            <li><%= member.age %></li>
+                            <li><%= member.job %></li>
+                            <li><%= member.city %></li>
+                            <li><%= member.study %></li>
+                        </ul>
+                        <p><%= member.bio %></p>
+                        <ul>
+                            <% member.favouriteMovies.map((movie) => { %>
+                                <li><%= movie %></li>
+                            <% }) %>
+                        </ul>
+                        <button class="closeCardButton">
+                            <span></span>
+                            <span></span>
+                        </button>
                     </form>
                 </dialog>
                 <button class="avatarButton">
@@ -189,6 +199,7 @@ Hier staat link in naar iedereen zijn/haar persoonlijke json met data
 Dit bestand wordt gebruikt om data van het team te fetchen. Eerst een aantal standaard dingen die gebeuren.
 - dotenv inladen
 - express gebruiken
+- localhost:3000 om de website op de liveserver te testen
 
 ```javascript
 require('dotenv').config()
@@ -252,6 +263,8 @@ app.listen(port, () => {
 ## Host
 Ferhat (server)
 
-## Wat is iedereens bijdrage
-Bart
+## Responsive 
+Martijn
+
+
 
