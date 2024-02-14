@@ -23,7 +23,7 @@ Zoals hierboven genoemd is ons algemene thema films. Om deze informatie overzich
 - Klaudia
     - readme
 - Ferhat
-    - host
+    - Domein & hosting
 - Martijn
     - responsive
 
