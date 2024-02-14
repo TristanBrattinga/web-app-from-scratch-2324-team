@@ -25,7 +25,7 @@ Zoals hierboven genoemd is ons algemene thema films. Om deze informatie overzich
 - Ferhat
     - Domein & hosting
 - Martijn
-    - responsive
+    - responsiveness
 
 # Process
 ## Schetsen
