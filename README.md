@@ -1,4 +1,4 @@
-# Team opdracht informatie
+# README Heroes & Villains
 ## Leden
 - Tristan Brattinga
 - Bart Spons
@@ -14,18 +14,18 @@ Zoals hierboven genoemd is ons algemene thema films. Om deze informatie overzich
 
 ## Taakverdeling
 - Tristan
-    - code
+    - Hoofd van de code
 - Bart 
-    - hulp bij code 
-    - process
-    - schetsen
-    - digitale schets
+    - Hulp bij code 
+    - Process
+    - Schetsen
+    - Digitale schets
 - Klaudia
-    - readme
+    - Readme
 - Ferhat
-    - Domein & hosting
+    - host
 - Martijn
-    - responsiveness
+    - responsive
 
 # Process
 ## Schetsen
@@ -267,10 +267,67 @@ app.listen(port, () => {
 <hr>
 
 ## Host
-Ferhat (server)
+### Domein
+De website wordt gehost op de server van één van de studenten. Om de website een duidelijke naam te geven is een domeinnaam verkregen genaamd heroesandvillains.nl.
+ 
+### Routing
+Het verkeer dat naar de website toe gaat wordt via meerdere hosts omgeleid, beginnende bij het publiekelijke IP van de student die de webserver host. Het verkeer gaat vervolgens naar een virtuele pfSense router dat beschikt over een ingeregelde firewall. Deze router stuurt het verkeer weer door naar de Nginx Proxy Manager, vanwaar er op basis van het domeinnaam wordt gekeken waar het verkeer heen moet. heroesandvillains.nl staat gekoppeld aan een IP-adres, dus wanneer er verkeer langs komt met als doel heroesandvillains.nl, zal de Nginx Proxy Manager het verkeer omleiden naar het gekoppelde IP. Nu het verkeer is beland op de host waar de webserver op wordt uitgevoerd zal de Apache2 Proxy het HTTPS-verkeer omzetten naar HTTP-verkeer, zodat de nodeJS-server hier wat mee kan gaan doen. Het verkeer omzetten van HTTPS naar HTTP wordt normaal gesproken afgeraden, omdat dit het normaliter mogelijk maakt dat een aanvaller vanaf het netwerk mee kan luisteren naar het verkeer. Echter, de route dat het verkeer netwerk-techinisch gezien aflegd is volledig versleuteld, dus is het in deze situatie voor een aanvaller niet mogelijk om mee te luisteren.
+ 
+### Back-end
+De back-end bestaat uit een proxy dat het inkomende verkeer doorgeleid naar een lokaal uitgevoerde nodeJS 'server'. Normaal zou dit niet nodig zijn en kan het inkomende verkeer direct naar de nodeJS 'server', echter is ervoor gekozen om HTTPS te gebruiken i.p.v. HTTP en om de code niet verder aan te passen is het noodzakelijk dat het inkomende HTTPS verkeer via de Apache2 proxy wordt omgeleid naar de nodeJS 'server'. De apache2 proxy bevat de volgende configuratie:
+```
+NameVirtualHost *:443
+<VirtualHost *:443>
+  ServerName heroesandvillains.nl
+  DocumentRoot /var/www/web-app-from-scratch-2324-team
+ 
+  CustomLog <LOG-PATH> combined
+  ErrorLog <ERROR-LOG-PATH>
+ 
+  # Example SSL configuration
+  SSLEngine on
+  SSLProtocol all -SSLv2
+  SSLCipherSuite HIGH:MEDIUM:!aNULL:!MD5
+  SSLCertificateFile "/var/www/web-app-from-scratch-2324-team/ssl/cert1.pem"
+  SSLCertificateKeyFile "/var/www/web-app-from-scratch-2324-team/ssl/privkey1.pem"
+  SSLCACertificateFile "/var/www/web-app-from-scratch-2324-team/ssl/chain1.pem"
+ 
+  ProxyPass / http://0.0.0.0:3000/
+  ProxyPassReverse / http://0.0.0.0:3000/
+</VirtualHost>
+```
+ 
+Om de nodeJS 'server' uit te voeren is een lokale service aangemaakt die een commando uitvoert om de 'server' op te starten op poort 3000. Het verkeer komt binnen via poort 443 en wordt omgeleid naar poort 3000.
+```
+[Unit]
+Description=Service to run a nodejs server
+After=network.target
+ 
+[Service]
+Type=simple
+ExecStart=node /var/www/web-app-from-scratch-2324-team/server.js
+Restart=on-failure
+user=web-runner
+group=web-runner
+WorkingDirectory=/var/www/web-app-from-scratch-2324-team
+ 
+[Install]
+WantedBy=multi-user.target
+```
 
 ## Responsive 
-Martijn
+De website moet natuurlijk ook responsive zijn. Dit is opgelost door middel van een mediaquery. De code is hieronder te zien.
 
-
+## Bronnenlijst
+<ul>
+    <li>https://stackoverflow.com/questions/71839052/html-dialog-tag-modal-scrolling-to-bottom-on-open</li>
+    <li>https://stackoverflow.com/questions/25864259/how-to-close-the-new-html-dialog-tag-by-clicking-on-its-backdrop</li>
+    <li>https://css.glass/</li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
 
