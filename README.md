@@ -29,7 +29,13 @@ Zoals hierboven genoemd is ons algemene thema films. Om deze informatie overzich
 
 # Process
 ## Schetsen
-Hieronder zijn onze schetsen te zien. Het idee is dat er op de pagina 5 buttons staan met allemaal een eigen avatar. Deze buttons draaien allemaal in een rondje. Het idee is dat deze om een planeet heendraaien.
+
+Ons eerste idee was om een simpele card slider te maken. Als je dan klikte op een card kreeg
+je de volledige informatie van de teammember te zien. Hieronder een Figma schets van ons eerste idee:
+
+<img src="./readme-images/wireframe.png" alt="Eerste ruwe schets team app">
+
+Hieronder zijn onze getekende schetsen te zien toen we ons uiteindelijke idee hadden. Het idee is dat er op de pagina 5 buttons staan met allemaal een eigen avatar. Deze buttons draaien allemaal in een rondje. Het idee is dat deze om een planeet heendraaien.
 
 De avatar van de button wordt uit het JSON bestand ingeladen. Iedereen heeft een eigen avatar. Als de gebruiker op een van deze buttons klikt wordt er een pop-up scherm geopend met allemaal info over een van onze teamleden.
 
